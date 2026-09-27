@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Conversor de Temperatura";
+}
+
+<h1>Conversor de Temperatura</h1>
+
+<form asp-action="Index" method="post">
+
+    <div>
+        <label>Temperatura:</label>
+        <input type="number" step="any" name="temperatura" required />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Conversão:</label>
+
+        <select name="conversao">
+
+            <option value="CelsiusFahrenheit">
+                Celsius → Fahrenheit
+            </option>
+
+            <option value="CelsiusKelvin">
+                Celsius → Kelvin
+            </option>
+
+            <option value="FahrenheitCelsius">
+                Fahrenheit → Celsius
+            </option>
+
+            <option value="FahrenheitKelvin">
+                Fahrenheit → Kelvin
+            </option>
+
+            <option value="KelvinCelsius">
+                Kelvin → Celsius
+            </option>
+
+            <option value="KelvinFahrenheit">
+                Kelvin → Fahrenheit
+            </option>
+
+        </select>
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Converter
+    </button>
+
+</form>
+
+@if (ViewBag.Resultado != null)
+{
+    <h2>
+        Resultado: @ViewBag.Resultado
+    </h2>
+}
